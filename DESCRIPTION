@@ -1,11 +1,18 @@
 Package: zueritheme
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Title: ggplot theme to conform to the corporate identity/design of the city of Zurich
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Sara",
+           "Hänzi",
+           role = c("aut"),
+           email = "sara.haenzi@zuerich.ch"),
+    person("Alessandro",
+           "Feller",
+           role = c("aut", "cre"),
+           email = "alessandro.feller@zuerich.ch")
+    )
+Description: This package exports one function - ssz_theme() - to be used as a ggplot theme.
 License: BSD-3-Clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
