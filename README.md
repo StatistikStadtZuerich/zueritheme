@@ -24,7 +24,7 @@ This is an example which shows you how to set the ssz_theme as your general ggpl
 ``` r
 library(zueritheme)
 library(ggplot2)
-set_theme(ssz_theme())
+theme_set(ssz_theme())
 ```
 
 Alternatively, you can add the theme to a ggplot directly:
