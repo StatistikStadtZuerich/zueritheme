@@ -11,7 +11,7 @@
 #' @param base_family optional, base_family parameter to be passed to minimal theme
 #' @param base_line_size tbd
 #' @param base_rect_size tbd
-#' @param ausrichtung tbd
+#' @param orientation tbd
 #'
 #' @export
 #' @import ggplot2 dplyr
@@ -25,15 +25,16 @@ ssz_theme <- function(base_size = 11,
                       base_family = "",
                       base_line_size = base_size / 170,
                       base_rect_size = base_size / 170,
-                      ausrichtung = "x") {
+                      orientation = "x") {
   # Werte müssen Character sein
-  if (!is.character(ausrichtung)) {
-    stop("ausrichtung muss character sein")
+  if (!is.character(orientation)) {
+    stop("orientation must be a character")
 
-    # Grids, wenn ausrichtung == X
-  } else if (ausrichtung == "x") {
+    # Grids, wenn orientation == X
+  } else if (orientation == "x") {
+
     # Minimales Theme anwenden
-    theme_minimal(
+    theme_bw(
       base_size = base_size,
       base_family = base_family,
       base_line_size = base_line_size
@@ -44,56 +45,77 @@ ssz_theme <- function(base_size = 11,
 
         # Titel
         plot.title = element_text(
-          color = rgb(25, 43, 65, maxColorValue = 255),
+          color = "#020304",
           face = "bold",
-          hjust = 0
+          hjust = 0,
+          size = rel(0.75)
         ),
         plot.subtitle = element_text(
-          color = rgb(25, 43, 65, maxColorValue = 255),
+          color = "#020304",
           face = "bold",
-          size = rel(0.5),
-          hjust = 0
+          hjust = 0,
+          size = rel(0.55)
         ),
 
         # Achsenbeschriftung
         axis.title.x = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
+        	color = "#020304",
+          size = rel(0.55),
           margin = margin(t = 20, r = 0, b = 0, l = 0)
         ),
         axis.title.y = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
+        	color = "#020304",
+        	size = rel(0.55),
           vjust = rel(1),
-          margin = margin(t = 0, r = 20, b = 0, l = 0)
+          margin = margin(t = 0, r = -20, b = 0, l = 0)
         ),
         axis.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.55)
+        	color = "#020304",
+        	size = rel(0.55),
         ),
+
+        # Achsenlinien
+        # axis.line.x = element_line(
+        # 	linewidth = rel(0.55),
+        # 	linetype = "solid",
+        # 	color = "#020304"
+        # ),
 
         # Gitterlinien
         panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(rgb(105, 105, 105, maxColorValue = 255),
+        panel.grid.major.y = element_line(
+        	color = "#020304",
           linetype = "solid",
-          size = rel(0.75)
+          size = rel(0.55)
         ),
         panel.grid.minor = element_blank(),
+        panel.background = element_rect(color = "pink"),
 
         # Legende
-        legend.position = "right",
+        legend.position = "left",
+        legend.justification = c(1,1),
+        legend.margin = margin(0, 100, 0, 0),
         legend.title = element_blank(),
         legend.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75)
+        	color = "#020304",
+        	size = rel(0.55)
         ),
-        complete = TRUE
+
+        # Caption
+        plot.caption.position =  "plot",
+        plot.caption = element_text(
+        														size = rel(0.54),
+        														margin = margin(15,0,0,0)
+        ),
+
+        complete = FALSE
       )
 
-    # Grids, wenn ausrichtung == Y
-  } else if (ausrichtung == "y") {
+    # Grids, wenn orientation == Y
+  } else if (orientation == "y") {
+
     # Minimales Theme anwenden
-    theme_minimal(
+  	theme_bw(
       base_size = base_size,
       base_family = base_family,
       base_line_size = base_line_size
@@ -104,50 +126,70 @@ ssz_theme <- function(base_size = 11,
 
         # Titel
         plot.title = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          face = "bold",
-          hjust = 0
+        	color = "#020304",
+        	face = "bold",
+        	hjust = 0,
+        	size = rel(0.75)
         ),
         plot.subtitle = element_text(
           color = rgb(105, 105, 105, maxColorValue = 255),
           face = "bold",
-          size = rel(0.5),
+          size = rel(0.55),
           hjust = 0
         ),
 
         # Achsenbeschriftung
         axis.title.x = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
+        	color = "#020304",
+        	size = rel(0.55),
           margin = margin(t = 20, r = 0, b = 0, l = 0)
         ),
         axis.title.y = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
+        	color = "#020304",
+          size = rel(0.55),
           vjust = rel(1),
-          margin = margin(t = 0, r = 20, b = 0, l = 0)
+          margin = margin(t = 0, r = -20, b = 0, l = 0)
         ),
         axis.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
+        	color = "#020304",
           size = rel(0.55)
         ),
 
+        # Achsenlinien
+        # axis.line.y = element_line(
+        # 	linewidth = rel(0.55),
+        # 	linetype = "solid",
+        # 	color = "#020304"
+        # ),
+
         # Gitterlinien
         panel.grid.major.y = element_blank(),
-        panel.grid.major.x = element_line(rgb(105, 105, 105, maxColorValue = 255),
+        panel.grid.major.x = element_line(
+        	color = "#020304",
           linetype = "solid",
-          size = rel(0.75)
+          size = rel(0.55)
         ),
         panel.grid.minor = element_blank(),
+        panel.background = element_rect(color = "pink"),
 
         # Legende
-        legend.position = "right",
+        legend.position = "left",
+        legend.justification = c(1,1),
+        legend.margin = margin(0, 100, 0, 0),
         legend.title = element_blank(),
         legend.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75)
+        	color = "#020304",
+          size = rel(0.55)
         ),
-        complete = TRUE
+
+        # Caption
+        plot.caption.position =  "plot",
+        plot.caption = element_text(
+        														size = rel(0.54),
+        														margin = margin(15,0,0,0)
+        ),
+
+        complete = FALSE
       )
   }
 }
