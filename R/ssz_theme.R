@@ -154,6 +154,22 @@ ssz_theme <- function(base_size = 8.2,
 
 					legend.spacing.y = unit(base_size / 100, "line"),
 
+					# Facets
+					strip.background = element_blank(),
+
+					strip.text = element_text(
+						color = "#020304",
+						face = "bold",
+						size = rel(1),
+						hjust = 0,
+						margin = margin(
+							t = 0,
+							r = 0,
+							b = 5,
+							l = 0
+						),
+					),
+
 					# Caption
 					plot.caption.position = "plot",
 
@@ -276,6 +292,22 @@ ssz_theme <- function(base_size = 8.2,
 					legend.key.width = unit(base_size / 11, "line"),
 
 					legend.spacing.y = unit(base_size / 100, "line"),
+
+					# Facets
+					strip.background = element_blank(),
+
+					strip.text = element_text(
+						color = "#020304",
+						face = "bold",
+						size = rel(1),
+						hjust = 0,
+						margin = margin(
+							t = 0,
+							r = 0,
+							b = 5,
+							l = 0
+						),
+					),
 
 					# Caption
 					plot.caption.position = "plot",
@@ -404,6 +436,22 @@ ssz_theme <- function(base_size = 8.2,
 					legend.key.width = unit(base_size / 11, "line"),
 
 					legend.spacing.y = unit(base_size / 100, "line"),
+
+					# Facets
+					strip.background = element_blank(),
+
+					strip.text = element_text(
+						color = "#020304",
+						face = "bold",
+						size = rel(1),
+						hjust = 0,
+						margin = margin(
+							t = 0,
+							r = 0,
+							b = 5,
+							l = 0
+						),
+					),
 
 					# Caption
 					plot.caption.position = "plot",
