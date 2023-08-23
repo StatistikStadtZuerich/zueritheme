@@ -97,8 +97,9 @@ ssz_theme <- function(base_size = 8.2,
 					axis.title.x = element_text(
 						color = "#020304",
 						size = rel(1),
+						hjust = 0,
 						margin = margin(
-							t = 20,
+							t = 10,
 							r = 0,
 							b = 0,
 							l = 0
@@ -119,7 +120,7 @@ ssz_theme <- function(base_size = 8.2,
 					),
 
 					axis.text = element_text(color = "#020304",
-																	 size = rel(1),),
+																	 size = rel(1)),
 
 					axis.ticks = element_blank(),
 
@@ -238,8 +239,9 @@ ssz_theme <- function(base_size = 8.2,
 					axis.title.x = element_text(
 						color = "#020304",
 						size = rel(1),
+						hjust = 0,
 						margin = margin(
-							t = 20,
+							t = 10,
 							r = 0,
 							b = 0,
 							l = 0
@@ -260,7 +262,7 @@ ssz_theme <- function(base_size = 8.2,
 					),
 
 					axis.text = element_text(color = "#020304",
-																	 size = rel(1),),
+																	 size = rel(1)),
 
 					axis.ticks = element_blank(),
 
@@ -380,8 +382,9 @@ ssz_theme <- function(base_size = 8.2,
 					axis.title.x = element_text(
 						color = "#020304",
 						size = rel(1),
+						hjust = 0,
 						margin = margin(
-							t = 20,
+							t = 10,
 							r = 0,
 							b = 0,
 							l = 0
@@ -402,7 +405,7 @@ ssz_theme <- function(base_size = 8.2,
 					),
 
 					axis.text = element_text(color = "#020304",
-																	 size = rel(1),),
+																	 size = rel(1)),
 
 					axis.ticks = element_blank(),
 
