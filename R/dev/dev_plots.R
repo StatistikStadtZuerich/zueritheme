@@ -52,12 +52,12 @@ ggplot(data = dat_wert,
 	ssz_theme(grid_lines = "both")
 
 # Plot with no grid lines (ssz_theme_void)
-# ggplot(mtcars,
-# 			 aes(x = factor(1),
-# 			 		 fill = factor(cyl))) +
-# 	geom_bar(width = 1) +
-# 	coord_polar(theta = "y") +
-# 	ssz_theme_void() +
-# 	labs(title = "Das ist ein Titel",
-# 			 subtitle = "Und hier kommt ein Untertitel",
-# 			 caption = "Dies ist eine Caption")
+ggplot(mtcars,
+			 aes(x = factor(1),
+			 		 fill = factor(cyl))) +
+	geom_bar(width = 1) +
+	coord_polar(theta = "y") +
+	ssz_theme_void() +
+	labs(title = "Das ist ein Titel",
+			 subtitle = "Und hier kommt ein Untertitel",
+			 caption = "Dies ist eine Caption")
