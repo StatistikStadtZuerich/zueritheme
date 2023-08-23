@@ -22,7 +22,7 @@
 #'   ssz_theme()
 #' }
 ssz_theme <- function(base_size = 8.2,
-											base_family = " ",
+											base_family = "",
 											base_line_size = base_size / 170,
 											base_rect_size = base_size / 170,
 											grid_lines) {
@@ -136,12 +136,14 @@ ssz_theme <- function(base_size = 8.2,
 
 					panel.border = element_blank(),
 
+					panel.spacing = unit(base_size / 11, "lines"),
+
 					# Legend
 					legend.position = "left",
 
 					legend.justification = c(0, 1),
 
-					legend.margin = margin(-2, 100, 0, 0),
+					legend.margin = margin(t = -2, r = 100, b = 0, l = 0),
 
 					legend.title = element_blank(),
 
@@ -275,12 +277,14 @@ ssz_theme <- function(base_size = 8.2,
 
 					panel.border = element_blank(),
 
+					panel.spacing = unit(base_size / 50, "lines"),
+
 					# Legend
 					legend.position = "left",
 
 					legend.justification = c(0, 1),
 
-					legend.margin = margin(-2, 100, 0, 0),
+					legend.margin = margin(t = -2, r = 100, b = 0, l = 0),
 
 					legend.title = element_blank(),
 
@@ -419,12 +423,14 @@ ssz_theme <- function(base_size = 8.2,
 
 					panel.border = element_blank(),
 
+					panel.spacing = unit(base_size / 50, "lines"),
+
 					# Legend
 					legend.position = "left",
 
 					legend.justification = c(0, 1),
 
-					legend.margin = margin(-2, 100, 0, 0),
+					legend.margin = margin(t = -2, r = 100, b = 0, l = 0),
 
 					legend.title = element_blank(),
 
