@@ -1,3 +1,4 @@
+<img src='pictures/Hexagon_zueritheme.png' align="right" height="138.5" />
 
 # zueritheme
 
@@ -6,7 +7,7 @@
 
 The goal of zueritheme is to provide a ggplot theme that conforms to the corporate identity/design of the city of Zurich.
 
-Note: this is still under development! Some types of plots (e.g. faceting) is know to not work very well.
+Note: this is still under development! A void theme is coming soon.
 
 ## Installation
 
