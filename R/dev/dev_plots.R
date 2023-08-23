@@ -2,6 +2,7 @@
 
 ##
 library(ggplot2)
+library(dplyr)
 
 ## Data
 kat <- c("Autos", "Velos", "Flugis", "Rollerblades", "Skateboards", "Schiffe", "Pferde", "Jetskis", "Raumschiffe")
@@ -24,7 +25,7 @@ ggplot(data = dat,
 			 caption = "Dies ist eine Caption, mit wichtigen Informationen über die Grafik.") +
 	facet_wrap(~ facet) +
 	scale_x_continuous(expand = c(0,0)) +
-	ssz_theme(grid_lines = "x")
+	ssz_theme(grid_lines = x)
 
 # Plot with grid lines y
 ggplot(data = dat,
@@ -49,3 +50,14 @@ ggplot(data = dat_wert,
 			 caption = "Dies ist eine Caption") +
 	scale_y_continuous(expand = c(0,0)) +
 	ssz_theme(grid_lines = "both")
+
+# Plot with no grid lines (ssz_theme_void)
+# ggplot(mtcars,
+# 			 aes(x = factor(1),
+# 			 		 fill = factor(cyl))) +
+# 	geom_bar(width = 1) +
+# 	coord_polar(theta = "y") +
+# 	ssz_theme_void() +
+# 	labs(title = "Das ist ein Titel",
+# 			 subtitle = "Und hier kommt ein Untertitel",
+# 			 caption = "Dies ist eine Caption")
