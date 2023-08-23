@@ -7,11 +7,11 @@
 #'
 #' @description Function for styling ggplots according to Stadt Zürich's corporate design
 #'
-#' @param base_size optional, basic font size, base_size parameter passed to minimal theme
-#' @param base_family optional, base_family parameter to be passed to minimal theme
-#' @param base_line_size tbd
-#' @param base_rect_size tbd
-#' @param grid_lines axis, on which you want to show the main grid lines
+#' @param base_size optional, basic font size, parameter passed to minimal theme
+#' @param base_family optional, basic font family, parameter to be passed to minimal theme
+#' @param base_line_size optional, basic line size, parameter passed to minimal theme
+#' @param base_rect_size optional, basic rect size, parameter passed to minimal theme
+#' @param grid_lines axis, on which to show the main grid lines
 #'
 #' @export
 #' @import ggplot2 dplyr
@@ -31,7 +31,7 @@ ssz_theme <- function(base_size = 8.2,
 		warning <-
 			paste0(
 				"You forgot to specify on which axis you want to display the grid lines of the plot.\n",
-				"Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
+				"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
 			)
 		stop(warning)
 	}
@@ -47,7 +47,7 @@ ssz_theme <- function(base_size = 8.2,
 					"\n  ",
 					toupper(axis_grid),
 					" is not a valid input.\n",
-					"Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
+					"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
 				)
 			)
 		stop(warning)
