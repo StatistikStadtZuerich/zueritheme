@@ -7,11 +7,11 @@
 #'
 #' @description Function for styling ggplots according to Stadt Zürich's corporate design
 #'
-#' @param base_size optional, basic font size, base_size parameter passed to minimal theme
-#' @param base_family optional, base_family parameter to be passed to minimal theme
-#' @param base_line_size tbd
-#' @param base_rect_size tbd
-#' @param ausrichtung tbd
+#' @param base_size optional, basic font size, parameter passed to minimal theme
+#' @param base_family optional, basic font family, parameter to be passed to minimal theme
+#' @param base_line_size optional, basic line size, parameter passed to minimal theme
+#' @param base_rect_size optional, basic rect size, parameter passed to minimal theme
+#' @param grid_lines axis, on which to show the main grid lines
 #'
 #' @export
 #' @import ggplot2 dplyr
@@ -21,133 +21,126 @@
 #' ggplot(...) +
 #'   ssz_theme()
 #' }
-ssz_theme <- function(base_size = 11,
-                      base_family = "",
-                      base_line_size = base_size / 170,
-                      base_rect_size = base_size / 170,
-                      ausrichtung = "x") {
-  # Werte müssen Character sein
-  if (!is.character(ausrichtung)) {
-    stop("ausrichtung muss character sein")
+ssz_theme <- function(base_size = 8.2,
+											base_family = "",
+											base_line_size = base_size / 170,
+											base_rect_size = base_size / 170,
+											grid_lines) {
+	# Orientation value must be character
+	if (missing(grid_lines)) {
+		warning <-
+			paste0(
+				"You forgot to specify on which axis you want to display the grid lines of the plot.\n",
+				"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
+			)
+		stop(warning)
+	}
 
-    # Grids, wenn ausrichtung == X
-  } else if (ausrichtung == "x") {
-    # Minimales Theme anwenden
-    theme_minimal(
-      base_size = base_size,
-      base_family = base_family,
-      base_line_size = base_line_size
-    ) %+replace%
+	# Transform input for x and y for further use
+	axis_grid <<- tolower(as.character(substitute(grid_lines)))
 
-      # SSZ-spezifische Theme-Eigenheiten
-      theme(
+	# Return error message if orientation is not x or y
+	if (!(axis_grid %in% c("x", "y", "both"))) {
+		warning <-
+			c(
+				paste0(
+					"\n  ",
+					toupper(axis_grid),
+					" is not a valid input.\n",
+					"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
+				)
+			)
+		stop(warning)
+	}
 
-        # Titel
-        plot.title = element_text(
-          color = rgb(25, 43, 65, maxColorValue = 255),
-          face = "bold",
-          hjust = 0
-        ),
-        plot.subtitle = element_text(
-          color = rgb(25, 43, 65, maxColorValue = 255),
-          face = "bold",
-          size = rel(0.5),
-          hjust = 0
-        ),
+	# Orientation == x
+	if (axis_grid == "x") {
+		# List object
+		list(
+			# Base theme ssz
+			ssz_theme_base(
+				base_size = base_size,
+				base_family = base_family,
+				base_line_size = base_line_size,
+				base_rect_size = base_rect_size
+			) %+replace%
 
-        # Achsenbeschriftung
-        axis.title.x = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
-          margin = margin(t = 20, r = 0, b = 0, l = 0)
-        ),
-        axis.title.y = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
-          vjust = rel(1),
-          margin = margin(t = 0, r = 20, b = 0, l = 0)
-        ),
-        axis.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.55)
-        ),
+				# SSZ specific theme components
+				theme(
+					# Grid Lines
+					panel.grid.major.y = element_blank(),
 
-        # Gitterlinien
-        panel.grid.major.x = element_blank(),
-        panel.grid.major.y = element_line(rgb(105, 105, 105, maxColorValue = 255),
-          linetype = "solid",
-          size = rel(0.75)
-        ),
-        panel.grid.minor = element_blank(),
+					panel.grid.major.x = element_line(
+						color = "#020304",
+						linetype = "solid",
+						size = rel(3)
+					)
+				),
 
-        # Legende
-        legend.position = "right",
-        legend.title = element_blank(),
-        legend.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75)
-        ),
-        complete = TRUE
-      )
+			guides(fill = guide_legend(byrow = TRUE))
+		)
 
-    # Grids, wenn ausrichtung == Y
-  } else if (ausrichtung == "y") {
-    # Minimales Theme anwenden
-    theme_minimal(
-      base_size = base_size,
-      base_family = base_family,
-      base_line_size = base_line_size
-    ) %+replace%
+		# Orientation == y
+	} else if (axis_grid == "y") {
+		# List object
+		list(
+			# Base theme ssz
+			ssz_theme_base(
+				base_size = base_size,
+				base_family = base_family,
+				base_line_size = base_line_size,
+				base_rect_size = base_rect_size
+			) %+replace%
 
-      # SSZ-spezifische Theme-Eigenheiten
-      theme(
+				# SSZ specific theme components
+				theme(
+					# Grid Lines
+					panel.grid.major.x = element_blank(),
 
-        # Titel
-        plot.title = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          face = "bold",
-          hjust = 0
-        ),
-        plot.subtitle = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          face = "bold",
-          size = rel(0.5),
-          hjust = 0
-        ),
+					panel.grid.major.y = element_line(
+						color = "#020304",
+						linetype = "solid",
+						size = rel(3)
+					),
+				),
 
-        # Achsenbeschriftung
-        axis.title.x = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
-          margin = margin(t = 20, r = 0, b = 0, l = 0)
-        ),
-        axis.title.y = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75),
-          vjust = rel(1),
-          margin = margin(t = 0, r = 20, b = 0, l = 0)
-        ),
-        axis.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.55)
-        ),
+			guides(fill = guide_legend(byrow = TRUE))
+		)
+	}
 
-        # Gitterlinien
-        panel.grid.major.y = element_blank(),
-        panel.grid.major.x = element_line(rgb(105, 105, 105, maxColorValue = 255),
-          linetype = "solid",
-          size = rel(0.75)
-        ),
-        panel.grid.minor = element_blank(),
+	# Orientation == both
+	else if (axis_grid == "both") {
+		# List object
+		list(
+			# Base theme ssz
+			ssz_theme_base(
+				base_size = base_size,
+				base_family = base_family,
+				base_line_size = base_line_size,
+				base_rect_size = base_rect_size
+			) %+replace%
 
-        # Legende
-        legend.position = "right",
-        legend.title = element_blank(),
-        legend.text = element_text(
-          color = rgb(105, 105, 105, maxColorValue = 255),
-          size = rel(0.75)
-        ),
-        complete = TRUE
-      )
-  }
+				# SSZ specific theme components
+				theme(
+					# Grid Lines
+					panel.grid.major.y = element_line(
+						color = "#020304",
+						linetype = "solid",
+						size = rel(3)
+					),
+
+					panel.grid.major.x = element_line(
+						color = "#020304",
+						linetype = "solid",
+						size = rel(3)
+					),
+
+					panel.spacing = unit(base_size / 50, "lines"),
+
+				),
+
+			guides(fill = guide_legend(byrow = TRUE))
+		)
+
+	}
 }
