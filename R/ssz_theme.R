@@ -1,17 +1,12 @@
-##### SSZ-ggplot-Theme
-# library(ggplot2)
-# library(gridExtra)
-# library(dplyr)
-
 #' ssz_theme
 #'
 #' @description Function for styling ggplots according to Stadt Zürich's corporate design
 #'
+#' @param grid_lines axis, on which to show the main grid lines
 #' @param base_size optional, basic font size, parameter passed to minimal theme
 #' @param base_family optional, basic font family, parameter to be passed to minimal theme
 #' @param base_line_size optional, basic line size, parameter passed to minimal theme
 #' @param base_rect_size optional, basic rect size, parameter passed to minimal theme
-#' @param grid_lines axis, on which to show the main grid lines
 #'
 #' @export
 #' @import ggplot2 dplyr
@@ -21,17 +16,17 @@
 #' ggplot(...) +
 #'   ssz_theme()
 #' }
-ssz_theme <- function(base_size = 8.2,
+ssz_theme <- function(grid_lines,
+											base_size = 8.2,
 											base_family = "",
 											base_line_size = base_size / 170,
-											base_rect_size = base_size / 170,
-											grid_lines) {
+											base_rect_size = base_size / 170) {
 	# Orientation value must be character
 	if (missing(grid_lines)) {
 		warning <-
 			paste0(
 				"You forgot to specify on which axis you want to display the grid lines of the plot.\n",
-				"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
+				"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'\n  'none'"
 			)
 		stop(warning)
 	}
@@ -40,14 +35,14 @@ ssz_theme <- function(base_size = 8.2,
 	axis_grid <<- tolower(as.character(substitute(grid_lines)))
 
 	# Return error message if orientation is not x or y
-	if (!(axis_grid %in% c("x", "y", "both"))) {
+	if (!(axis_grid %in% c("x", "y", "both", "none"))) {
 		warning <-
 			c(
 				paste0(
 					"\n  ",
 					toupper(axis_grid),
 					" is not a valid input.\n",
-					"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'"
+					"  Please provide axis for grid lines. Accepted values:\n  'x'\n  'y'\n  'both'\n  'none'"
 				)
 			)
 		stop(warning)
@@ -133,14 +128,33 @@ ssz_theme <- function(base_size = 8.2,
 						color = "#020304",
 						linetype = "solid",
 						size = rel(3)
-					),
-
-					panel.spacing = unit(base_size / 50, "lines"),
-
+					)
 				),
 
 			guides(fill = guide_legend(byrow = TRUE))
 		)
 
+	}
+
+	# Orientation == none
+	else if (axis_grid == "none") {
+		# List object
+		list(
+			# Base theme ssz
+			ssz_theme_base(
+				base_size = base_size,
+				base_family = base_family,
+				base_line_size = base_line_size,
+				base_rect_size = base_rect_size
+			) %+replace%
+
+				# SSZ specific theme components
+				theme(
+					# Grid Lines
+					panel.grid.major = element_blank()
+				),
+
+			guides(fill = guide_legend(byrow = TRUE))
+		)
 	}
 }
