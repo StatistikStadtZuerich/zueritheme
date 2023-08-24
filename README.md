@@ -34,6 +34,6 @@ library(zueritheme)
 library(ggplot2)
 ggplot(...) +
 	... +
-	ssz_theme()
+	ssz_theme(grid_lines = "x")
 ```
 
