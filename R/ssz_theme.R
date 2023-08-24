@@ -14,7 +14,7 @@
 #' @importFrom grDevices rgb
 #' @examples \dontrun{
 #' ggplot(...) +
-#'   ssz_theme()
+#'   ssz_theme(grid_lines = "x")
 #' }
 ssz_theme <- function(grid_lines,
 											base_size = 8.2,

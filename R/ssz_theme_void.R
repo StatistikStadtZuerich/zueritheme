@@ -1,8 +1,3 @@
-##### SSZ-ggplot-Theme
-# library(ggplot2)
-# library(gridExtra)
-# library(dplyr)
-
 #' ssz_theme_void
 #'
 #' @description Function for styling void ggplots according to Stadt Zürich's corporate design
