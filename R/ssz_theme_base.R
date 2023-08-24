@@ -3,10 +3,10 @@
 #' this creates a ggplot theme that can be used as a base theme on top of which to
 #' replace the items that depend on the orientation of the plot
 #'
-#' @param base_size
-#' @param base_family
-#' @param base_line_size
-#' @param base_rect_size
+#' @param base_size optional, basic font size, parameter passed to minimal theme
+#' @param base_family optional, basic font family, parameter to be passed to minimal theme
+#' @param base_line_size optional, basic line size, parameter passed to minimal theme
+#' @param base_rect_size optional, basic rect size, parameter passed to minimal theme
 #'
 #' @return a ggplot theme
 ssz_theme_base <- function(base_size,
@@ -47,7 +47,7 @@ ssz_theme_base <- function(base_size,
 				margin = margin(
 					t = 0,
 					r = 0,
-					b = 25,
+					b = 10,
 					l = 0
 				)
 			),
