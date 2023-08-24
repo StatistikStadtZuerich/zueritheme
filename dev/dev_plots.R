@@ -50,6 +50,18 @@ ggplot(data = dat_wert,
 	facet_wrap(~ kat) +
 	ssz_theme(grid_lines = "both")
 
+# Plots with grid lines none
+ggplot(data = dat_wert,
+			 aes(x = wert, y = wert_y, color = kat)) +
+	geom_point() +
+	labs(title = "Vehicle types used in the city of Zurich",
+			 subtitle = "by engine type",
+			 x = "Gallons per Mile",
+			 y = "Velocity",
+			 caption = "The numbers shown above are fictious data.") +
+	scale_y_continuous(expand = c(0,0), limits = c(0, max(dat_wert$wert_y)+ 100)) +
+	ssz_theme(grid_lines = "none")
+
 # Plot with no grid lines (ssz_theme_void)
 ggplot(dat_wert,
 			 aes(x = factor(1),
