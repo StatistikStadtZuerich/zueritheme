@@ -7,8 +7,6 @@
 
 The goal of zueritheme is to provide a ggplot theme that conforms to the corporate identity/design of the city of Zurich.
 
-Note: this is still under development! A void theme is coming soon.
-
 ## Installation
 
 You can install the development version of zueritheme from [GitHub](https://github.com/) with:
