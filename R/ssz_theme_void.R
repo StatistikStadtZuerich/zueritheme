@@ -63,15 +63,19 @@ ssz_theme_void <- function(base_size = 8.2,
 				panel.spacing = unit(base_size / 11, "lines"),
 
 				# Plot Background
-				plot.background = element_rect(fill = "white",
-																			 color = NA),
+				plot.background = element_rect(fill = "white", color = NA),
 
 				# Legend
 				legend.position = "left",
 
 				legend.justification = c(0, 1),
 
-				legend.margin = margin(t = -2, r = 100, b = 0, l = 0),
+				legend.margin = margin(
+					t = -2,
+					r = 100,
+					b = 0,
+					l = 0
+				),
 
 				legend.title = element_blank(),
 
