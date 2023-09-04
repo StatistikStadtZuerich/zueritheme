@@ -32,7 +32,7 @@ ssz_theme <- function(grid_lines,
 	}
 
 	# Transform input for x and y for further use
-	axis_grid <<- tolower(as.character(substitute(grid_lines)))
+	axis_grid <<- tolower(as.character(grid_lines))
 
 	# Return error message if orientation is not x or y
 	if (!(axis_grid %in% c("x", "y", "both", "none"))) {
@@ -68,7 +68,7 @@ ssz_theme <- function(grid_lines,
 					panel.grid.major.x = element_line(
 						color = "#020304",
 						linetype = "solid",
-						size = rel(3)
+						linewidth = rel(3)
 					)
 				),
 
