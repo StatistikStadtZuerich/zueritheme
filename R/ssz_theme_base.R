@@ -94,7 +94,7 @@ ssz_theme_base <- function(base_size,
 
 			legend.justification = c(0, 1),
 
-			legend.margin = margin(t = -2, r = 100, b = 0, l = 0),
+			legend.margin = margin(t = -2, r = base_size*2, b = 0, l = 0),
 
 			legend.title = element_blank(),
 
