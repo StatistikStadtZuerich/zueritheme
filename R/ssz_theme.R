@@ -42,7 +42,7 @@ ssz_theme <- function(grid_lines = "y",
 	# Orientation == x
 	if (axis_grid == "x") {
 		# List object
-		list(
+		# list(
 			# Base theme ssz
 			ssz_theme_base(
 				base_size = base_size,
@@ -61,15 +61,15 @@ ssz_theme <- function(grid_lines = "y",
 						linetype = "solid",
 						linewidth = rel(3)
 					)
-				),
+				)
 
-			guides(fill = guide_legend(byrow = TRUE))
-		)
+			# guides(fill = guide_legend(byrow = TRUE))
+		# )
 
 		# Orientation == y
 	} else if (axis_grid == "y") {
 		# List object
-		list(
+		# list(
 			# Base theme ssz
 			ssz_theme_base(
 				base_size = base_size,
@@ -88,16 +88,16 @@ ssz_theme <- function(grid_lines = "y",
 						linetype = "solid",
 						size = rel(3)
 					),
-				),
+				)
 
-			guides(fill = guide_legend(byrow = TRUE))
-		)
+			# guides(fill = guide_legend(byrow = TRUE))
+		# )
 	}
 
 	# Orientation == both
 	else if (axis_grid == "both") {
 		# List object
-		list(
+		#  list(
 			# Base theme ssz
 			ssz_theme_base(
 				base_size = base_size,
@@ -120,17 +120,17 @@ ssz_theme <- function(grid_lines = "y",
 						linetype = "solid",
 						size = rel(3)
 					)
-				),
+				)
 
-			guides(fill = guide_legend(byrow = TRUE))
-		)
+			# guides(fill = guide_legend(byrow = TRUE))
+		# )
 
 	}
 
 	# Orientation == none
 	else if (axis_grid == "none") {
 		# List object
-		list(
+		# list(
 			# Base theme ssz
 			ssz_theme_base(
 				base_size = base_size,
@@ -143,9 +143,9 @@ ssz_theme <- function(grid_lines = "y",
 				theme(
 					# Grid Lines
 					panel.grid.major = element_blank()
-				),
+				)
 
-			guides(fill = guide_legend(byrow = TRUE))
-		)
+			# guides(fill = guide_legend(byrow = TRUE))
+		# )
 	}
 }

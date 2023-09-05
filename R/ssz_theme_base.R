@@ -23,6 +23,7 @@ ssz_theme_base <- function(base_size,
 
 		# SSZ specific theme components
 		theme(
+
 			# Title
 			plot.title.position = "plot",
 
@@ -104,8 +105,6 @@ ssz_theme_base <- function(base_size,
 			legend.key.height = unit(base_size / 11, "line"),
 
 			legend.key.width = unit(base_size / 11, "line"),
-
-			legend.spacing.y = unit(base_size / 100, "line"),
 
 			# Facets
 			strip.background = element_blank(),

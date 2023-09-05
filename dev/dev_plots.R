@@ -23,7 +23,7 @@ ggplot(data = dat_wert,
 			 caption = "The numbers shown above are fictious data.") +
 	facet_wrap(~ facet, scales = "free") +
 	scale_x_continuous(expand = c(0,0)) +
-	ssz_theme(base_size = 12)
+	ssz_theme()
 
 # Plot with grid lines y
 ggplot(data = dat_wert,

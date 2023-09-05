@@ -20,7 +20,7 @@ ssz_theme_void <- function(base_size = 8.2,
 													 base_line_size = base_size / 170,
 													 base_rect_size = base_size / 170) {
 	# List object
-	list(
+
 		# Base theme_bw
 		theme_void(
 			base_size = base_size,
@@ -86,8 +86,6 @@ ssz_theme_void <- function(base_size = 8.2,
 
 				legend.key.width = unit(base_size / 11, "line"),
 
-				legend.spacing.y = unit(base_size / 100, "line"),
-
 				# Facets
 				strip.background = element_blank(),
 
@@ -119,8 +117,5 @@ ssz_theme_void <- function(base_size = 8.2,
 				),
 
 				complete = FALSE
-			),
-
-		guides(fill = guide_legend(byrow = TRUE))
-	)
+			)
 }
