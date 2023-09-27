@@ -48,3 +48,6 @@ ggplot(...) +
 	ssz_theme(grid_lines = "x")
 ```
 
+## Getting Help
+If you encounter a bug, please contact statistik@zuerich.ch.
+
