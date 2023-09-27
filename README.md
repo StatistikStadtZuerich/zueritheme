@@ -26,7 +26,7 @@ remotes::install_local("<path_to_location>/zueritheme-main")
 To check your version of zueritheme, run:
 
 ``` r
-packageVersion("zuericolors")
+packageVersion("zueritheme")
 ```
 
 ## Example
