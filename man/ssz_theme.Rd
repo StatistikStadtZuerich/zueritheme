@@ -5,15 +5,16 @@
 \title{ssz_theme}
 \usage{
 ssz_theme(
-  grid_lines,
+  grid_lines = "y",
   base_size = 8.2,
   base_family = "",
   base_line_size = base_size/170,
-  base_rect_size = base_size/170
+  base_rect_size = base_size/170,
+  medium = "print"
 )
 }
 \arguments{
-\item{grid_lines}{axis, on which to show the main grid lines}
+\item{grid_lines}{axis, on which to show the main grid lines. Default is "y".}
 
 \item{base_size}{optional, basic font size, parameter passed to minimal theme}
 
@@ -22,6 +23,8 @@ ssz_theme(
 \item{base_line_size}{optional, basic line size, parameter passed to minimal theme}
 
 \item{base_rect_size}{optional, basic rect size, parameter passed to minimal theme}
+
+\item{medium}{medium, for which the theme is used. Possible options are "print" and "web". Default is "print".}
 }
 \description{
 Function for styling ggplots according to Stadt Zürich's corporate design
@@ -29,6 +32,6 @@ Function for styling ggplots according to Stadt Zürich's corporate design
 \examples{
 \dontrun{
 ggplot(...) +
-  ssz_theme()
+  ssz_theme(grid_lines = "x")
 }
 }
