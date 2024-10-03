@@ -12,6 +12,8 @@ wert_y <- runif(length(kat), min = 0, max = 10000)
 facet <- c("motorized", "not motorized", "motorized", "motorized", "motorized", "motorized", "not motorized", "motorized")
 dat_wert <- data.frame(kat, wert, wert_y, facet)
 
+## Print
+
 # Plot with grid lines x
 ggplot(data = dat_wert,
 			 aes(x = wert, y = kat, fill = facet)) +
@@ -23,7 +25,8 @@ ggplot(data = dat_wert,
 			 caption = "The numbers shown above are fictious data.") +
 	facet_wrap(~ facet, scales = "free") +
 	scale_x_continuous(expand = c(0,0)) +
-	ssz_theme()
+	ssz_theme(medium = "print", grid_lines = "x")
+
 
 # Plot with grid lines y
 ggplot(data = dat_wert,
@@ -35,7 +38,7 @@ ggplot(data = dat_wert,
 			 y = "Proportion (in %)",
 			 caption = "The numbers shown above are fictious data.") +
 	scale_y_continuous(expand = c(0,0)) +
-	ssz_theme(grid_lines = "y")
+	ssz_theme(medium = "print", grid_lines = "y")
 
 # Plots with grid lines both
 ggplot(data = dat_wert,
@@ -48,7 +51,7 @@ ggplot(data = dat_wert,
 			 caption = "The numbers shown above are fictious data.") +
 	scale_y_continuous(expand = c(0,0), limits = c(0, max(dat_wert$wert_y)+ 100)) +
 	facet_wrap(~ kat) +
-	ssz_theme(grid_lines = "both")
+	ssz_theme(medium = "print", grid_lines = "both")
 
 # Plots with grid lines none
 ggplot(data = dat_wert,
@@ -60,7 +63,7 @@ ggplot(data = dat_wert,
 			 y = "Velocity",
 			 caption = "The numbers shown above are fictious data.") +
 	scale_y_continuous(expand = c(0,0), limits = c(0, max(dat_wert$wert_y)+ 100)) +
-	ssz_theme(grid_lines = "none")
+	ssz_theme(medium = "print", grid_lines = "none")
 
 # Plot with no grid lines (ssz_theme_void)
 ggplot(dat_wert,
@@ -72,3 +75,57 @@ ggplot(dat_wert,
 	labs(title = "Vehicle types used in the city of Zurich",
 			 subtitle = "by engine type",
 			 caption = "The numbers shown above are fictious data.")
+
+## Web
+
+# Plot with grid lines x
+ggplot(data = dat_wert,
+			 aes(x = wert, y = kat, fill = facet)) +
+	geom_bar(stat = "identity") +
+	labs(title = "Vehicle types used in the city of Zurich",
+			 subtitle = "by engine type",
+			 x = "Proportion (in %)",
+			 y = "Vehicles",
+			 caption = "The numbers shown above are fictious data.") +
+	facet_wrap(~ facet, scales = "free") +
+	scale_x_continuous(expand = c(0,0),
+										 limits = c(0, 100)) +
+	ssz_theme(medium = "web", grid_lines = "x")
+
+# Plot with grid lines y
+ggplot(data = dat_wert,
+			 aes(x = kat, y = wert, fill = kat)) +
+	geom_bar(stat = "identity") +
+	labs(title = "Vehicle types used in the city of Zurich",
+			 subtitle = "by engine type",
+			 x = "Vehicles",
+			 y = "Proportion (in %)",
+			 caption = "The numbers shown above are fictious data.") +
+	scale_y_continuous(expand = c(0,0),
+										 limits = c(0, 100)) +
+	ssz_theme(medium = "web")
+
+ggplot(data = dat_wert,
+			 aes(x = wert, y = kat, fill = facet)) +
+	geom_bar(stat = "identity") +
+	labs(title = "Vehicle types used in the city of Zurich",
+			 subtitle = "by engine type",
+			 x = "Proportion (in %)",
+			 y = "Vehicles",
+			 caption = "The numbers shown above are fictious data.") +
+	scale_x_continuous(expand = c(0,0),
+										 limits = c(0, 101)) +
+	ssz_theme(medium = "web", grid_lines = "y")
+
+ggplot(data = dat_wert,
+			 aes(x = wert, y = kat, color = facet)) +
+	geom_point(size = 2) +
+	labs(title = "Vehicle types used in the city of Zurich",
+			 subtitle = "by engine type",
+			 x = "Proportion (in %)",
+			 y = "Vehicles",
+			 caption = "The numbers shown above are fictious data.") +
+	scale_x_continuous(expand = c(0,0),
+										 limits = c(0, 101)) +
+	ssz_theme(medium = "web", grid_lines = "y")
+
