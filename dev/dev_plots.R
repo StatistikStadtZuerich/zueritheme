@@ -5,6 +5,9 @@ set.seed(1313)
 # Required Libraries ------------------------------------------------------
 
 devtools::load_all()
+library(ggplot2)
+library(dplyr)
+library(stringi)
 
 
 # Color Palettes ----------------------------------------------------------
