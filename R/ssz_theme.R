@@ -4,9 +4,9 @@
 #' corporate design.
 #'
 #' @param grid_lines mandatory, specifies the axis on which to display the primary
-#' grid lines or axis lines. For ggplot objects rendered with media = "print",
+#' grid lines or axis lines. For ggplot objects rendered with publication_type = "print",
 #' the default value is "y", meaning the main grid lines will appear on the Y-axis.
-#' In contrast, for ggplot objects with media = "web", grid lines are not shown
+#' In contrast, for ggplot objects with publication_type = "web", grid lines are not shown
 #' explicitly. Instead, an axis line is displayed on the axis pecified by grid_lines,
 #' effectively serving the role of grid lines in the plot.
 #' @param base_size optional, defines the base font size used throughout the plot.
@@ -28,10 +28,10 @@
 #' is passed to the ssz_theme_base and ssz_theme_base_web function, ensuring
 #' consistent sizing of rectangular shapes across ggplot elements. Adjust this value
 #' to control the thickness of borders for better visual balance or customization.
-#' @param media mandatory, specifies the output medium for with the theme is
+#' @param publication_type mandatory, specifies the output type for with the theme is
 #' tailored. Available options are "print" and "web", with "print" as the default
 #' value. This parameter controls how visual elements like grid lines and axis
-#' formatting are adjusted to best suit the chosen medium, ensuring optimal
+#' formatting are adjusted to best suit the chosen publication type, ensuring optimal
 #' presentation for either print or web-based outputs.
 #'
 #' @return a ggplot theme.
@@ -42,36 +42,36 @@
 #' @importFrom grDevices rgb
 #' @examples \dontrun{
 #' ggplot(...) +
-#'   ssz_theme(grid_lines = "x", media = "print")
+#'   ssz_theme(grid_lines = "x", publication_type = "print")
 #' }
 ssz_theme <- function(grid_lines = "y",
                       base_size = 8.2,
                       base_family = "",
                       base_line_size = base_size / 170,
                       base_rect_size = base_size / 170,
-                      media = "print") {
+                      publication_type = "print") {
   # Transform input for x and y for further use
   axis_grid <- tolower(as.character(grid_lines))
 
-  # Transform input for media
-  media <- tolower(as.character(media))
+  # Transform input for publication type
+  publication_type <- tolower(as.character(publication_type))
 
-  # Return error message if media is wrong
-  if (!(media %in% c("print", "web"))) {
+  # Return error message if publication_type is wrong
+  if (!(publication_type %in% c("print", "web"))) {
     warning <-
       c(
         paste0(
           "\n  ",
-          toupper(media),
+          toupper(publication_type),
           " is not a valid input.\n",
-          "  Please provide a media format for the theme. Accepted values:\n  'print'\n  'web'"
+          "  Please provide a publication type for the theme. Accepted values:\n  'print'\n  'web'"
         )
       )
     stop(warning)
   }
 
-  # Check the media
-  if (media == "print") {
+  # Check the publication_type
+  if (publication_type == "print") {
     # Return error message if orientation is not x or y
     if (!(axis_grid %in% c("x", "y", "both", "none"))) {
       warning <-
@@ -173,7 +173,7 @@ ssz_theme <- function(grid_lines = "y",
           panel.grid.major = element_blank()
         )
     }
-  } else if (media == "web") {
+  } else if (publication_type == "web") {
     # Return error message if orientation is not x or y
     if (!(axis_grid %in% c("x", "y"))) {
       warning <-
