@@ -10,28 +10,56 @@ ssz_theme(
   base_family = "",
   base_line_size = base_size/170,
   base_rect_size = base_size/170,
-  medium = "print"
+  media = "print"
 )
 }
 \arguments{
-\item{grid_lines}{axis, on which to show the main grid lines. Default is "y".}
+\item{grid_lines}{mandatory, specifies the axis on which to display the primary
+grid lines or axis lines. For ggplot objects rendered with media = "print",
+the default value is "y", meaning the main grid lines will appear on the Y-axis.
+In contrast, for ggplot objects with media = "web", grid lines are not shown
+explicitly. Instead, an axis line is displayed on the axis pecified by grid_lines,
+effectively serving the role of grid lines in the plot.}
 
-\item{base_size}{optional, basic font size, parameter passed to minimal theme}
+\item{base_size}{optional, defines the base font size used throughout the plot.
+This parameter is passed to the ssz_theme_base and ssz_theme_base_web function,
+ensuring consistent typography across ggplot elements. Adjust this value to
+control the overall text size in the ggplot object for better readability or
+stylistic preference.}
 
-\item{base_family}{optional, basic font family, parameter to be passed to minimal theme}
+\item{base_family}{optional, specifies the base font family for the text elements
+in the ggplot object. This parameter is passed to the ssz_theme_base and
+ssz_theme_base_web function, ensuring a consistent font style across ggplot elements.
+Adjust this value to control the overall font family in the ggplot object.}
 
-\item{base_line_size}{optional, basic line size, parameter passed to minimal theme}
+\item{base_line_size}{optional, sets the base line size for lines and borders
+within the ggplot object. This parameter is passed to the ssz_theme_base and
+ssz_theme_base_web function, ensuring consistent line thickness across visual
+elements. Adjust this value to modify the overall line width for improved visual
+clarity or stylistic preferences.}
 
-\item{base_rect_size}{optional, basic rect size, parameter passed to minimal theme}
+\item{base_rect_size}{optional, specifies the base size for rectangular elements
+such as legend boxes or plot backgrounds within the ggplot object. This parameter
+is passed to the ssz_theme_base and ssz_theme_base_web function, ensuring
+consistent sizing of rectangular shapes across ggplot elements. Adjust this value
+to control the thickness of borders for better visual balance or customization.}
 
-\item{medium}{medium, for which the theme is used. Possible options are "print" and "web". Default is "print".}
+\item{media}{mandatory, specifies the output medium for with the theme is
+tailored. Available options are "print" and "web", with "print" as the default
+value. This parameter controls how visual elements like grid lines and axis
+formatting are adjusted to best suit the chosen medium, ensuring optimal
+presentation for either print or web-based outputs.}
+}
+\value{
+a ggplot theme.
 }
 \description{
-Function for styling ggplots according to Stadt Zürich's corporate design
+Function for styling ggplots graphs according to Stadt Zürich's
+corporate design.
 }
 \examples{
 \dontrun{
 ggplot(...) +
-  ssz_theme(grid_lines = "x")
+  ssz_theme(grid_lines = "x", media = "print")
 }
 }
