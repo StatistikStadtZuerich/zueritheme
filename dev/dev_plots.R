@@ -43,7 +43,7 @@ ggplot(
   ) +
   scale_x_continuous(expand = c(0, 0)) +
   scale_fill_manual(values = c(qual6[1], qual6[4])) +
-  ssz_theme(media = "print", grid_lines = "x")
+  ssz_theme(publication_type = "print", grid_lines = "x")
 
 
 # Plot with grid lines y
@@ -61,7 +61,7 @@ ggplot(
   ) +
   scale_y_continuous(expand = c(0, 0)) +
   scale_fill_manual(values = c(qual6[1], qual6[4])) +
-  ssz_theme(media = "print", grid_lines = "y")
+  ssz_theme(publication_type = "print", grid_lines = "y")
 
 # Plots with grid lines both
 ggplot(
@@ -78,7 +78,7 @@ ggplot(
   ) +
   scale_y_continuous(limits = c(0, max(dat_wert$wert_y) + 100)) +
   scale_color_manual(values = c(qual6[1], qual6[4])) +
-  ssz_theme(media = "print", grid_lines = "both")
+  ssz_theme(publication_type = "print", grid_lines = "both")
 
 # Plots with grid lines none
 ggplot(
@@ -95,7 +95,7 @@ ggplot(
   ) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, max(dat_wert$wert_y) + 100)) +
   scale_color_manual(values = c(qual6[1], qual6[4])) +
-  ssz_theme(media = "print", grid_lines = "none")
+  ssz_theme(publication_type = "print", grid_lines = "none")
 
 # Plot with no grid lines and no axis text (ssz_theme_void)
 ggplot(
@@ -141,7 +141,7 @@ g1 <- ggplot(
   ) +
   scale_x_continuous(expand = c(0, 0), limits = c(0, 100)) +
   scale_fill_manual(values = c(qual6[1], qual6[4])) +
-  ssz_theme(media = "web", grid_lines = "x")
+  ssz_theme(publication_type = "web", grid_lines = "x")
 
 girafe(
   ggobj = g1,
@@ -183,7 +183,7 @@ g2 <- ggplot(data = dat_wert, aes(
   ) +
   scale_y_continuous(expand = c(0, 0)) +
   scale_fill_manual(values = qual8) +
-  ssz_theme(media = "web")
+  ssz_theme(publication_type = "web")
 
 girafe(
   ggobj = g2,
@@ -230,7 +230,7 @@ g3 <- ggplot(
     limits = c(0, 101)
   ) +
   scale_fill_manual(values = c(qual6[1], qual6[4])) +
-  ssz_theme(media = "web", grid_lines = "y")
+  ssz_theme(publication_type = "web", grid_lines = "y")
 
 girafe(
   ggobj = g3,
