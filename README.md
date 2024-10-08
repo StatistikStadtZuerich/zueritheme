@@ -51,7 +51,7 @@ ggplot(...) +
     ssz_theme(medium = "print", grid_lines = "x")
 ```
 
-With the release of version 0.0.2 of `zueritheme`, a new function parameter named `medium` has been added, allowing for different styling options specifically for web-based `ggplots`, such as those generated with `ggiraph`.
+With the release of version 0.0.2 of `zueritheme`, a new function parameter named `publication_type` has been added, allowing for different styling options specifically for web-based `ggplots`, such as those generated with `ggiraph`.
 
 ## Getting Help
 
