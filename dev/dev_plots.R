@@ -4,9 +4,7 @@ set.seed(1313)
 
 # Required Libraries ------------------------------------------------------
 
-library(ggiraph)
-library(ggplot2)
-library(glue)
+devtools::load_all()
 
 
 # Color Palettes ----------------------------------------------------------
