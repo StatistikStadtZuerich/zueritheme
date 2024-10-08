@@ -10,14 +10,14 @@ ssz_theme(
   base_family = "",
   base_line_size = base_size/170,
   base_rect_size = base_size/170,
-  media = "print"
+  publication_type = "print"
 )
 }
 \arguments{
 \item{grid_lines}{mandatory, specifies the axis on which to display the primary
-grid lines or axis lines. For ggplot objects rendered with media = "print",
+grid lines or axis lines. For ggplot objects rendered with publication_type = "print",
 the default value is "y", meaning the main grid lines will appear on the Y-axis.
-In contrast, for ggplot objects with media = "web", grid lines are not shown
+In contrast, for ggplot objects with publication_type = "web", grid lines are not shown
 explicitly. Instead, an axis line is displayed on the axis pecified by grid_lines,
 effectively serving the role of grid lines in the plot.}
 
@@ -44,10 +44,10 @@ is passed to the ssz_theme_base and ssz_theme_base_web function, ensuring
 consistent sizing of rectangular shapes across ggplot elements. Adjust this value
 to control the thickness of borders for better visual balance or customization.}
 
-\item{media}{mandatory, specifies the output medium for with the theme is
+\item{publication_type}{mandatory, specifies the output type for with the theme is
 tailored. Available options are "print" and "web", with "print" as the default
 value. This parameter controls how visual elements like grid lines and axis
-formatting are adjusted to best suit the chosen medium, ensuring optimal
+formatting are adjusted to best suit the chosen publication type, ensuring optimal
 presentation for either print or web-based outputs.}
 }
 \value{
@@ -60,6 +60,6 @@ corporate design.
 \examples{
 \dontrun{
 ggplot(...) +
-  ssz_theme(grid_lines = "x", media = "print")
+  ssz_theme(grid_lines = "x", publication_type = "print")
 }
 }
