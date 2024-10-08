@@ -38,7 +38,8 @@ a void ggplot theme.
 }
 \description{
 Function for styling ggplots graphs according to Stadt Zürich's
-corporate design. Used for plots with a void theme.
+corporate design. Used for plots with a void theme, i.e. no grid lines and no
+axis texts.
 }
 \examples{
 \dontrun{
