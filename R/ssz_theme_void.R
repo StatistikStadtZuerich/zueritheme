@@ -1,11 +1,28 @@
 #' ssz_theme_void
 #'
-#' @description Function for styling void ggplots according to Stadt Zürich's corporate design
+#' @description Function for styling ggplots graphs according to Stadt Zürich's
+#' corporate design. Used for plots with a void theme, i.e. no grid lines and no
+#' axis texts.
 #'
-#' @param base_size optional, basic font size, parameter passed to minimal theme
-#' @param base_family optional, basic font family, parameter to be passed to minimal theme
-#' @param base_line_size optional, basic line size, parameter passed to minimal theme
-#' @param base_rect_size optional, basic rect size, parameter passed to minimal theme
+#' @param base_size optional, defines the base font size used throughout the plot.
+#' This parameter is passed to the theme_void function, ensuring consistent typography
+#' across ggplot elements. Adjust this value to control the overall text size
+#' in the ggplot object for better readability or stylistic preference.
+#' @param base_family optional, specifies the base font family for the text elements
+#' in the ggplot object. This parameter is passed to the theme_void function,
+#' ensuring a consistent font style across ggplot elements. Adjust this value to
+#' control the overall font family in the ggplot object.
+#' @param base_line_size optional, sets the base line size for lines and borders
+#' within the ggplot object. This parameter is passed to the theme_void function,
+#' ensuring consistent line thickness across visual elements. Adjust this value to $
+#' modify the overall line width for improved visual clarity or stylistic preferences.
+#' @param base_rect_size optional, specifies the base size for rectangular elements
+#' such as legend boxes or plot backgrounds within the ggplot object. This parameter
+#' is passed to the theme_void function, ensuring consistent sizing of rectangular
+#' shapes across ggplot elements. Adjust this value to control the thickness of
+#' borders for better visual balance or customization.
+#'
+#' @return a void ggplot theme.
 #'
 #' @export
 #' @import ggplot2 dplyr
