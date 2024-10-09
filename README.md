@@ -1,15 +1,16 @@
-<img src='pictures/Hexagon_zueritheme.png' align="right" height="138.5" />
+<img src="pictures/Hexagon_zueritheme.png" align="right" height="138.5"/>
 
 # zueritheme
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-zueritheme is an R-Package, which provides a ggplot2 theme that conforms to the corporate design of the city of Zurich. zueritheme's main function `ssz_theme(...)` provides most of the styling. However, in order for ggplot2 graphs to fully conform to the corporate design, a few manual steps are still necessary. These steps are explained in further detail in the [zueriplots](https://github.com/StatistikStadtZuerich/zueriplots) repository. You can find CI/CD conform color palettes in the [zuericolors](https://github.com/StatistikStadtZuerich/zuericolors) package.
+`zueritheme` is an R-Package, which provides a `ggplot2` theme that conforms to the corporate design of the city of Zurich. `zueritheme`'s main function `ssz_theme(...)` provides most of the styling. However, in order for `ggplot2` graphs to fully conform to the corporate design, a few manual steps are still necessary. These steps are explained in further detail in the [`zueriplots`](https://github.com/StatistikStadtZuerich/zueriplots) repository. You can find CI/CD conform color palettes in the [`zuericolors`](https://github.com/StatistikStadtZuerich/zuericolors) package.
 
 ## Installation
 
-The easiest way to get zuericolors is to install it from this repo:
+The easiest way to get `zueritheme` is to install it from this repo:
 
 ``` r
 # install.packages("devtools")
@@ -23,7 +24,8 @@ remotes::install_local("<path_to_location>/zueritheme-main")
 ```
 
 ## Version
-To check your version of zueritheme, run:
+
+To check your version of `zueritheme`, run:
 
 ``` r
 packageVersion("zueritheme")
@@ -31,7 +33,7 @@ packageVersion("zueritheme")
 
 ## Example
 
-This is an example which shows you how to set the ssz_theme as your general ggplot theme:
+This is an example which shows you how to set the `ssz_theme` as your general `ggplot` theme:
 
 ``` r
 library(zueritheme)
@@ -40,14 +42,17 @@ theme_set(ssz_theme())
 ```
 
 Alternatively, you can add the theme to a ggplot directly:
+
 ``` r
 library(zueritheme)
 library(ggplot2)
 ggplot(...) +
-	... +
-	ssz_theme(grid_lines = "x")
+    ... +
+    ssz_theme(medium = "print", grid_lines = "x")
 ```
 
-## Getting Help
-If you encounter a bug, please contact statistik@zuerich.ch.
+With the release of version 0.0.2 of `zueritheme`, a new function parameter named `publication_type` has been added, allowing for different styling options specifically for web-based `ggplots`, such as those generated with `ggiraph`.
 
+## Getting Help
+
+If you encounter a bug, please contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch){.email}.
