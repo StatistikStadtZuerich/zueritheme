@@ -3,3 +3,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+.gitlab-ci.yml
+_pkgdown.yml
+^docs$
+^dev$
