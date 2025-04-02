@@ -53,6 +53,8 @@ ggplot(...) +
 
 With the release of version 0.0.2 of `zueritheme`, a new function parameter named `publication_type` has been added, allowing for different styling options specifically for web-based `ggplots`, such as those generated with `ggiraph`.
 
+For detailed instructions on how to create correctly styled plots (for print), check out the [zueriplots repository](https://github.com/StatistikStadtZuerich/zueriplots).
+
 ## Getting Help
 
 If you encounter a bug, please contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch){.email}.
