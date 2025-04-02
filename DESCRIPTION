@@ -3,15 +3,15 @@ Type: Package
 Title: ggplot theme to conform to the corporate identity/design of the city of Zurich
 Version: 0.0.3
 Authors@R: c(
-    person("Sara",
-           "Hänzi",
-           role = c("aut"),
-           email = "sara.haenzi@zuerich.ch"),
     person("Alessandro",
            "Feller",
            role = c("aut", "cre"),
            email = "alessandro.feller@zuerich.ch"),
-    person("Statistik stadt Zürich",
+    person("Sara",
+           "Hänzi",
+           role = c("aut"),
+           email = "sara.haenzi@zuerich.ch"),
+    person("Statistik Stadt Zürich",
     email = "statistik@zuerich.ch",
     role = c("cph", "fnd")
     )
@@ -26,5 +26,6 @@ Imports:
     ggplot2,
     gridExtra
 Suggests: 
+    pkgdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

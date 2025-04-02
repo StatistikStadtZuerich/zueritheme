@@ -1,4 +1,4 @@
-<img src="pictures/Hexagon_zueritheme.png" align="right" height="138.5"/>
+<img src="man/figures/Hexagon_zueritheme.png" align="right" height="138.5" width="138.5"/>
 
 # zueritheme
 
