@@ -3,12 +3,10 @@
 #' @description Function for styling ggplots graphs according to Stadt Zürich's
 #' corporate design.
 #'
-#' @param grid_lines mandatory, specifies the axis on which to display the primary
-#' grid lines or axis lines. For ggplot objects rendered with publication_type = "print",
-#' the default value is "y", meaning the main grid lines will appear on the Y-axis.
-#' In contrast, for ggplot objects with publication_type = "web", grid lines are not shown
-#' explicitly. Instead, an axis line is displayed on the axis pecified by grid_lines,
-#' effectively serving the role of grid lines in the plot.
+#' @param grid_lines specifies the axis on which to display the primary
+#' grid lines or axis lines. "y" is the default value, can be "x" or "y" for
+#' publication type "web", and "x", "y", "both", or "none" for publication_type
+#' "print".
 #' @param base_size optional, defines the base font size used throughout the plot.
 #' This parameter is passed to the ssz_theme_base and ssz_theme_base_web function,
 #' ensuring consistent typography across ggplot elements. Adjust this value to
@@ -28,7 +26,7 @@
 #' is passed to the ssz_theme_base and ssz_theme_base_web function, ensuring
 #' consistent sizing of rectangular shapes across ggplot elements. Adjust this value
 #' to control the thickness of borders for better visual balance or customization.
-#' @param publication_type mandatory, specifies the output type for with the theme is
+#' @param publication_type specifies the output type for with the theme is
 #' tailored. Available options are "print" and "web", with "print" as the default
 #' value. This parameter controls how visual elements like grid lines and axis
 #' formatting are adjusted to best suit the chosen publication type, ensuring optimal
