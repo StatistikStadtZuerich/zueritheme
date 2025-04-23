@@ -1,3 +1,11 @@
+# zueritheme 1.0.0
+
+* no functional changes
+* add minimal tests
+* change license to MIT
+* create pkgdown site
+* add GitLab and GitHub pipelines/actions for testing and checking
+
 # zueritheme 0.0.3
 
 * Add theme and parameters for web publication.

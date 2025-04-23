@@ -1,7 +1,7 @@
 Package: zueritheme
 Type: Package
 Title: ggplot theme to conform to the corporate identity/design of the city of Zurich
-Version: 0.0.3
+Version: 1.0.0
 Authors@R: c(
     person("Alessandro",
            "Feller",
