@@ -17,6 +17,7 @@ Authors@R: c(
     )
     )
 Description: This package exports one function - ssz_theme() - to be used as a ggplot theme.
+URL: https://statistikstadtzuerich.github.io/zueritheme/, https://github.com/StatistikStadtZuerich/zueritheme
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
