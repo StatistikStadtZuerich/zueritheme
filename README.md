@@ -1,4 +1,4 @@
-<img src="man/figures/Hexagon_zueritheme.png" align="right" height="138.5" width="138.5"/>
+<img src="man/figures/Hexagon_zueritheme.png" alt="Hexagon logo for zueritheme R package" align="right" height="138.5" width="138.5"/>
 
 # zueritheme
 
@@ -59,4 +59,4 @@ For detailed instructions on how to create correctly styled plots (for print), c
 
 ## Getting Help
 
-If you encounter a bug, please contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch){.email}.
+If you encounter a bug, please contact [statistik\@zuerich.ch](mailto:statistik@zuerich.ch).
