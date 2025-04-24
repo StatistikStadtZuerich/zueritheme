@@ -10,12 +10,16 @@ include:
 
 stages:
   - test
+  - build
   - deploy-prod
 
 # run check
 r-devtools-check:
   extends:
     - .r-devtools-check
+
+r-pkgdown-build-no-commit:
+  extends: ".r-pkgdown-build-no-commit"
 
 # push main branch to github
 publish-main-to-github:
