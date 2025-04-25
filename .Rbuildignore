@@ -4,7 +4,8 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 .gitlab-ci.yml
-_pkgdown.yml
 ^docs$
 ^dev$
 ^\.github$
+^_pkgdown\.yml$
+^pkgdown$
