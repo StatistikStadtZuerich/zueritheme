@@ -1,19 +1,24 @@
 Package: zueritheme
 Type: Package
 Title: ggplot theme to conform to the corporate identity/design of the city of Zurich
-Version: 0.0.3
+Version: 1.0.0
 Authors@R: c(
+    person("Alessandro",
+           "Feller",
+           role = c("aut", "cre"),
+           email = "alessandro.feller@zuerich.ch"),
     person("Sara",
            "Hänzi",
            role = c("aut"),
            email = "sara.haenzi@zuerich.ch"),
-    person("Alessandro",
-           "Feller",
-           role = c("aut", "cre"),
-           email = "alessandro.feller@zuerich.ch")
+    person("Statistik Stadt Zürich",
+    email = "statistik@zuerich.ch",
+    role = c("cph", "fnd")
+    )
     )
 Description: This package exports one function - ssz_theme() - to be used as a ggplot theme.
-License: BSD-3-Clause + file LICENSE
+URL: https://statistikstadtzuerich.github.io/zueritheme/, https://github.com/StatistikStadtZuerich/zueritheme
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
@@ -21,3 +26,7 @@ Imports:
     dplyr,
     ggplot2,
     gridExtra
+Suggests: 
+    pkgdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

@@ -2,3 +2,10 @@
 ^renv\.lock$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
+.gitlab-ci.yml
+^docs$
+^dev$
+^\.github$
+^_pkgdown\.yml$
+^pkgdown$
