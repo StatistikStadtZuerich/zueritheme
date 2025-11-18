@@ -1,0 +1,80 @@
+# ssz_theme
+
+Function for styling ggplots graphs according to Stadt Zürich's
+corporate design.
+
+## Usage
+
+``` r
+ssz_theme(
+  grid_lines = "y",
+  base_size = 8.2,
+  base_family = "",
+  base_line_size = base_size/170,
+  base_rect_size = base_size/170,
+  publication_type = "print"
+)
+```
+
+## Arguments
+
+- grid_lines:
+
+  specifies the axis on which to display the primary grid lines or axis
+  lines. "y" is the default value, can be "x" or "y" for publication
+  type "web", and "x", "y", "both", or "none" for publication_type
+  "print".
+
+- base_size:
+
+  optional, defines the base font size used throughout the plot. This
+  parameter is passed to the ssz_theme_base and ssz_theme_base_web
+  function, ensuring consistent typography across ggplot elements.
+  Adjust this value to control the overall text size in the ggplot
+  object for better readability or stylistic preference.
+
+- base_family:
+
+  optional, specifies the base font family for the text elements in the
+  ggplot object. This parameter is passed to the ssz_theme_base and
+  ssz_theme_base_web function, ensuring a consistent font style across
+  ggplot elements. Adjust this value to control the overall font family
+  in the ggplot object.
+
+- base_line_size:
+
+  optional, sets the base line size for lines and borders within the
+  ggplot object. This parameter is passed to the ssz_theme_base and
+  ssz_theme_base_web function, ensuring consistent line thickness across
+  visual elements. Adjust this value to modify the overall line width
+  for improved visual clarity or stylistic preferences.
+
+- base_rect_size:
+
+  optional, specifies the base size for rectangular elements such as
+  legend boxes or plot backgrounds within the ggplot object. This
+  parameter is passed to the ssz_theme_base and ssz_theme_base_web
+  function, ensuring consistent sizing of rectangular shapes across
+  ggplot elements. Adjust this value to control the thickness of borders
+  for better visual balance or customization.
+
+- publication_type:
+
+  specifies the output type for with the theme is tailored. Available
+  options are "print" and "web", with "print" as the default value. This
+  parameter controls how visual elements like grid lines and axis
+  formatting are adjusted to best suit the chosen publication type,
+  ensuring optimal presentation for either print or web-based outputs.
+
+## Value
+
+a ggplot theme.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+ggplot(...) +
+  ssz_theme(grid_lines = "x", publication_type = "print")
+} # }
+```
