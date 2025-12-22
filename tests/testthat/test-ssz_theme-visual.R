@@ -16,7 +16,7 @@ test_that("ssz_theme print y gridlines looks correct", {
 		ssz_theme(
 			publication_type = "print",
 			grid_lines = "y",
-			base_family = "SSZ"
+			base_family = "sans"
 		)
 
 	vdiffr::expect_doppelganger(
