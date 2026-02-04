@@ -2,7 +2,6 @@
 
 * no functional changes
 * update R version
-* add snapshot tests
 
 # zueritheme 1.0.0
 
