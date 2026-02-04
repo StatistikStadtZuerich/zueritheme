@@ -1,6 +1,7 @@
 # zueritheme 1.0.1
 
 * no functional changes
+* replace deprecated parameter size with linewidth in element_line
 * update R version
 
 # zueritheme 1.0.0
