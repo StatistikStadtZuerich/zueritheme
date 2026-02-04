@@ -124,7 +124,7 @@ ssz_theme <- function(grid_lines = "y",
           panel.grid.major.y = element_line(
             color = "#020304",
             linetype = "solid",
-            size = rel(3)
+            linewidth = rel(3)
           ),
         )
 
@@ -145,12 +145,12 @@ ssz_theme <- function(grid_lines = "y",
           panel.grid.major.y = element_line(
             color = "#020304",
             linetype = "solid",
-            size = rel(3)
+            linewidth = rel(3)
           ),
           panel.grid.major.x = element_line(
             color = "#020304",
             linetype = "solid",
-            size = rel(3)
+            linewidth = rel(3)
           )
         )
 
@@ -200,8 +200,10 @@ ssz_theme <- function(grid_lines = "y",
         theme(
 
           # Axis Line on X Axis
-          axis.line.x = element_line(colour = "#737373", size = 0.25),
-          axis.ticks.x = element_line(colour = "#737373", size = 0.25),
+          axis.line.x = element_line(colour = "#737373",
+          													 linewidth = 0.25),
+          axis.ticks.x = element_line(colour = "#737373",
+          														linewidth = 0.25),
           axis.ticks.length.x = unit(0.1, "cm")
         )
 
@@ -219,8 +221,10 @@ ssz_theme <- function(grid_lines = "y",
         theme(
 
           # Axis Line on X Axis
-          axis.line.y = element_line(colour = "#737373", size = 0.25),
-          axis.ticks.y = element_line(colour = "#737373", size = 0.25),
+          axis.line.y = element_line(colour = "#737373",
+          													 linewidth = 0.25),
+          axis.ticks.y = element_line(colour = "#737373",
+          														linewidth = 0.25),
           axis.ticks.length.y = unit(0.1, "cm")
         )
     }
